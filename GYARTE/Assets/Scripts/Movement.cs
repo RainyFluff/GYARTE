@@ -9,13 +9,15 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public float Speed = 10f;
     public float jumpForce = 10f;
-    
+    public GameObject cam;
+    public float sens = 10;
     //public GameObject orientation;
     bool IsGrounded = false;
     public GameObject feet;
     public GameObject orientation;
     LayerMask groundmask;
     public Vector3 direction = Vector3.right;
+
     void Start()
     {
         groundmask = LayerMask.GetMask("Ground");
@@ -48,6 +50,7 @@ public class Movement : MonoBehaviour
 
     void Moving()
     {
+        
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(orientation.transform.right * -4);
