@@ -6,6 +6,7 @@ public class MouseLook : MonoBehaviour
 {
     public Vector2 turn;
     public float sensitivity;
+    public GameObject orientation;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class MouseLook : MonoBehaviour
         turn.y = Mathf.Clamp(turn.y, -90, 90);
 
         transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+        orientation.transform.rotation = Quaternion.Euler(0, turn.x, 0);   
 
         
     }
