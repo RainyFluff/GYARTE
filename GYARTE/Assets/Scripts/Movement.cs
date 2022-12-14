@@ -8,21 +8,16 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public float Speed = 10f;
     public float jumpForce = 10f;
-<<<<<<< Updated upstream
     public Camera cam;
     public float sens = 10;
+
     
-    void Start()
-    {
-         
-=======
     bool IsGrounded = false;
     public GameObject feet;
     LayerMask groundmask;
     void Start()
     {
         groundmask = LayerMask.GetMask("Ground");
->>>>>>> Stashed changes
     }
 
     

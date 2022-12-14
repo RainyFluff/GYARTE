@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 288
+  controlID: 21
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 61
+  controlID: 27
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 62
+  controlID: 28
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -378,22 +378,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Nikod\Documents\GYARTE
+  m_LastProjectPath: C:\Users\Jakob\Documents\GitHub\GYARTE\GYARTE
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 526a0000
-    m_LastClickedID: 27218
-    m_ExpandedIDs: 00000000526a000000ca9a3b
+    m_SelectedIDs: 32b90000
+    m_LastClickedID: 47410
+    m_ExpandedIDs: 000000002ab9000030b9000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -421,7 +421,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000526a0000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -513,7 +513,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 437
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -553,7 +553,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 34fbfffff6670000
+      m_ExpandedIDs: 2eb8feff44c4feffdecbfeff60cefeff46cffeff04d6feffeaf6feff96b1ffff5cbbffff80b90000aab90000bcb90000deb900006ccb0000cecb000088cc0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -803,9 +803,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.2816057, y: 1.7010725, z: -15.62046}
+    m_Target: {x: 3.6164594, y: 1.7037659, z: -15.38196}
     speed: 2
-    m_Value: {x: 4.2816057, y: 1.7010725, z: -15.62046}
+    m_Value: {x: 3.6164594, y: 1.7037659, z: -15.38196}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -852,13 +852,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.3243492, y: 0.0045683635, z: -0.001507336, w: 0.9459767}
+    m_Target: {x: -0.070072524, y: -0.7036662, z: 0.07015192, w: -0.7036699}
     speed: 2
-    m_Value: {x: 0.32433343, y: 0.0045681414, z: -0.0015072627, w: 0.94593066}
+    m_Value: {x: -0.070068, y: -0.70362085, z: 0.070147395, w: -0.70362455}
   m_Size:
-    m_Target: 3.4439857
+    m_Target: 4.624187
     speed: 2
-    m_Value: 3.4439857
+    m_Value: 4.624187
   m_Ortho:
     m_Target: 0
     speed: 2
