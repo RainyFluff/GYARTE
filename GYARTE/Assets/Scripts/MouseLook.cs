@@ -10,6 +10,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -21,5 +22,7 @@ public class MouseLook : MonoBehaviour
         turn.y = Mathf.Clamp(turn.y, -90, 90);
 
         transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+
+        
     }
 }

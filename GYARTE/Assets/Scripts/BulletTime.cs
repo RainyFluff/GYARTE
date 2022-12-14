@@ -13,21 +13,20 @@ public class BulletTime : MonoBehaviour
     private void Start()
     {
         timeNormal();
-        //slowMoPostProcess.SetActive(false);
-        //normalPostProcess.SetActive(true);
+        slowMoPostProcess.SetActive(false);
+        normalPostProcess.SetActive(true);
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse3))
+        if (Input.GetKey(KeyCode.Mouse3))
         {
             timeSlowdown();
             slowMoPostProcess.SetActive(true);
             normalPostProcess.SetActive(false);
         }
-        
-        if(Input.GetKeyUp(KeyCode.Mouse3))
+        else
         {
             timeNormal();
             slowMoPostProcess.SetActive(false);
