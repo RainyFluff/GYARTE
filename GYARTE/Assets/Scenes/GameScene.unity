@@ -491,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turn: {x: 0, y: 0}
   sensitivity: 2
+  orientation: {fileID: 746113508}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +803,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!1 &746113508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746113509}
+  m_Layer: 0
+  m_Name: Orientation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746113509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746113508}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.61, z: 0}
+  m_LocalScale: {x: 1, y: 0.6666667, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1227213570}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,9 +1450,9 @@ MonoBehaviour:
   rb: {fileID: 1227213566}
   Speed: 10
   jumpForce: 10
-  cam: {fileID: 330585543}
-  sens: 10
   feet: {fileID: 696122078}
+  orientation: {fileID: 746113508}
+  direction: {x: 1, y: 0, z: 0}
 --- !u!54 &1227213566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1435,7 +1467,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1227213567
 CapsuleCollider:
@@ -1515,6 +1547,7 @@ Transform:
   m_Children:
   - {fileID: 696122079}
   - {fileID: 1708788915}
+  - {fileID: 746113509}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
