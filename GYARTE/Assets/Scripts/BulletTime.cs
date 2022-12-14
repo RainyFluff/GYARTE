@@ -7,17 +7,30 @@ public class BulletTime : MonoBehaviour
 
     public float timeMultiplier = 0.2f;
     public float normalTimeMultiplier = 1f;
+    public GameObject slowMoPostProcess;
+    public GameObject normalPostProcess;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        timeNormal();
+        slowMoPostProcess.SetActive(false);
+        normalPostProcess.SetActive(true);
+    }
+
+
     void Update()
     {
         if (Input.GetKey(KeyCode.Mouse3))
         {
             timeSlowdown();
+            slowMoPostProcess.SetActive(true);
+            normalPostProcess.SetActive(false);
         }
         else
         {
             timeNormal();
+            slowMoPostProcess.SetActive(false);
+            normalPostProcess.SetActive(true);
         }
     }
 
