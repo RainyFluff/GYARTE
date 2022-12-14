@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -8,8 +9,9 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public float Speed = 10f;
     public float jumpForce = 10f;
-    public Camera cam;
+    public GameObject cam;
     public float sens = 10;
+
 
     
     bool IsGrounded = false;
@@ -25,6 +27,11 @@ public class Movement : MonoBehaviour
     {
         Moving();
         IsGrounded = Physics.CheckSphere(feet.transform.position, 0.1f, groundmask);
+
+        float playerTurn = cam.GetComponent<MouseLook>().turn.x;
+        float playerSensitivity = cam.GetComponent<MouseLook>().sensitivity;
+
+        transform.localRotation = Quaternion.Euler(0, playerTurn * playerSensitivity, 0);
     }
 
 
