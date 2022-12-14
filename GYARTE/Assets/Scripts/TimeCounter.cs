@@ -7,6 +7,7 @@ public class TimeCounter : MonoBehaviour
 {
     public TextMeshProUGUI counterText;
     public float countedTime;
+    public int printedTime;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,9 @@ public class TimeCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int printedTime = (int)countedTime;
+
         countedTime = Time.timeSinceLevelLoad;
-        counterText.text = countedTime.ToString();
+        counterText.text = printedTime.ToString();
     }
 }
