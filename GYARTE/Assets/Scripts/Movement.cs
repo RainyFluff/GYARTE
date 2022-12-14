@@ -10,9 +10,10 @@ public class Movement : MonoBehaviour
     public float jumpForce = 10f;
     public Camera cam;
     public float sens = 10;
+    
     void Start()
     {
-        
+         
     }
 
     
