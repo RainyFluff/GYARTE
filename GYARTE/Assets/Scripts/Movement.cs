@@ -9,10 +9,7 @@ public class Movement : MonoBehaviour
     public float Speed = 10f;
     public float jumpForce = 10f;
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     public Camera cam;
-=======
->>>>>>> Stashed changes
     public float sens = 10;
     
     void Start()
