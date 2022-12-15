@@ -905,6 +905,11 @@ MonoBehaviour:
   cam: {fileID: 330585543}
   pelletsPerShot: 9
   range: 100
+  fireRate: 1
+  inaccuracyDistance: 5
+  rb: {fileID: 1227213566}
+  forceRecoil: 10
+  knockbackPower: 5
 --- !u!4 &860143485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16951b64d2d1cf147808e720000a9d2b,
@@ -1892,6 +1897,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 16951b64d2d1cf147808e720000a9d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fab85bdf9b542a648a887bc3238da098, type: 2}
     - target: {fileID: 919132149155446097, guid: 16951b64d2d1cf147808e720000a9d2b,
         type: 3}
       propertyPath: m_Name
