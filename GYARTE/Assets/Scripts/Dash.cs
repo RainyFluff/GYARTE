@@ -12,7 +12,7 @@ public class Dash : MonoBehaviour
     public float dashCooldown = 10;
     public Transform orientation;
     public float force;
-
+    public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,21 @@ public class Dash : MonoBehaviour
         {
             timer = Time.timeSinceLevelLoad;
             player.GetComponent<Movement>().enabled = true;
+            cam.fieldOfView = 60;
             dashTime = 10000000;
+        }
+        if (Time.timeSinceLevelLoad - dashTime > dashDuration / 2 && dashTime < 100000)
+        {
+            cam.fieldOfView += ((Time.timeSinceLevelLoad - dashTime) * 500f * Time.deltaTime);
+        }
+        else if (Time.timeSinceLevelLoad - dashTime < dashDuration/2 && dashTime < 100000)
+        {
+            cam.fieldOfView -= ((Time.timeSinceLevelLoad - dashTime) * 500f * Time.deltaTime);
+        }
+
+        else
+        {
+            cam.fieldOfView = 60;
         }
     }
 
@@ -44,7 +58,6 @@ public class Dash : MonoBehaviour
 
     void playerDash()
     {
-        
         player.GetComponent<Movement>().enabled = false;
         if (Input.GetKey(KeyCode.A))
         {
