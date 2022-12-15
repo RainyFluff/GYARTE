@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     [Header("General")]
     public Rigidbody rb;
-    public float speed = 0.2f;
+    float speed = 0.2f;
     public float airSpeed = 0.05f;
     public float normalSpeed = 0.2f;
     public float jumpForce = 10f;
@@ -19,8 +19,11 @@ public class Movement : MonoBehaviour
     public GameObject orientation;
     LayerMask groundmask;
     public Vector3 direction = Vector3.right;
-    public float maxSpeed = 5;
+    float maxSpeed;
+    public float maxSpeedOne = 3;
+    public float maxSpeedTwo = 5;
     public float airMaxSpeed = 10;
+    float airMaxSpeedDouble;
     int jumpsleft;
 
     void Start()
@@ -35,7 +38,8 @@ public class Movement : MonoBehaviour
     {
         Moving();
 
-        
+       
+
         IsGrounded = Physics.CheckSphere(feet.transform.position, 0.1f, groundmask);
 
         //float playerTurn = cam.GetComponent<MouseLook>().turn.x;
@@ -107,14 +111,14 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            normalSpeed = 0.4f;
-            maxSpeed = 5;
+            speed *= 2;
+            maxSpeed = maxSpeedTwo;
         }
 
         else
         {
-            normalSpeed = 0.2f;
-            maxSpeed = 3;
+            speed = normalSpeed;
+            maxSpeed = maxSpeedOne;
         }
 
         
