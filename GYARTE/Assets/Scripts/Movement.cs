@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     public Vector3 direction = Vector3.right;
     public float maxSpeed = 5;
     public float airMaxSpeed = 10;
+    int jumpsleft;
 
     void Start()
     {
@@ -41,8 +42,6 @@ public class Movement : MonoBehaviour
         //float playerSensitivity = cam.GetComponent<MouseLook>().sensitivity;
 
         //transform.localRotation = Quaternion.Euler(0, playerTurn * playerSensitivity * 3, 0);
-
-        
         
     }
 
@@ -77,11 +76,13 @@ public class Movement : MonoBehaviour
 
         if (IsGrounded)
         {
+            jumpsleft = 2;
             speed = normalSpeed;
             if (Input.GetKey(KeyCode.Space))
             {
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+                jumpsleft--;
             }
 
             if (rb.velocity.magnitude > maxSpeed)
@@ -91,6 +92,15 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            if (jumpsleft >= 1)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    rb.velocity = new Vector3(0, 0, 0);
+                    rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+                    jumpsleft --;
+                }
+            }
             speed = airSpeed;
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, airMaxSpeed);
         }
