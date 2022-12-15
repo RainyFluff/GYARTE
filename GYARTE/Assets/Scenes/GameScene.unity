@@ -905,6 +905,11 @@ MonoBehaviour:
   cam: {fileID: 330585543}
   pelletsPerShot: 9
   range: 100
+  fireRate: 1
+  inaccuracyDistance: 5
+  rb: {fileID: 1227213566}
+  forceRecoil: 15
+  knockbackPower: 10
 --- !u!4 &860143485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16951b64d2d1cf147808e720000a9d2b,
@@ -980,7 +985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 25a9fb42d361f46ad89221f6d301e96e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1448,12 +1453,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1227213566}
+<<<<<<< Updated upstream
   speed: 0.2
   airSpeed: 0.05
   normalSpeed: 0.2
   jumpForce: 6
   cam: {fileID: 0}
   sens: 10
+=======
+  Speed: 100
+  jumpForce: 10
+>>>>>>> Stashed changes
   feet: {fileID: 696122078}
   orientation: {fileID: 746113508}
   direction: {x: 1, y: 0, z: 0}
@@ -1892,6 +1902,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 16951b64d2d1cf147808e720000a9d2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fab85bdf9b542a648a887bc3238da098, type: 2}
     - target: {fileID: 919132149155446097, guid: 16951b64d2d1cf147808e720000a9d2b,
         type: 3}
       propertyPath: m_Name
@@ -1909,7 +1924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708788915}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CamHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

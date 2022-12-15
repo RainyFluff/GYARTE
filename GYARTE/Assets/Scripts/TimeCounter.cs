@@ -23,4 +23,9 @@ public class TimeCounter : MonoBehaviour
         countedTime = Time.timeSinceLevelLoad;
         counterText.text = printedTime.ToString();
     }
+
+
+
+
+    
 }
