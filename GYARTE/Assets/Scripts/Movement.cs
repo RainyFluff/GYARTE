@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     LayerMask groundmask;
     public Vector3 direction = Vector3.right;
     public float maxSpeed = 5;
+    public float airMaxSpeed = 10;
 
     void Start()
     {
@@ -91,6 +92,19 @@ public class Movement : MonoBehaviour
         else
         {
             speed = airSpeed;
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, airMaxSpeed);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            normalSpeed = 0.4f;
+            maxSpeed = 5;
+        }
+
+        else
+        {
+            normalSpeed = 0.2f;
+            maxSpeed = 3;
         }
 
         

@@ -936,6 +936,11 @@ MonoBehaviour:
   cam: {fileID: 330585543}
   pelletsPerShot: 9
   range: 100
+  fireRate: 0.3
+  inaccuracyDistance: 5
+  rb: {fileID: 1227213566}
+  forceRecoil: 10
+  knockbackPower: 5
 --- !u!4 &860143485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16951b64d2d1cf147808e720000a9d2b,
@@ -989,8 +994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b68550384ea964a9b8299e1638796c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: {fileID: 746113509}
-  shootForce: 100
+  rb: {fileID: 870147125}
+  cam: {fileID: 330585546}
+  shootForce: 1000
+  timeToDespawn: 3
 --- !u!54 &870147125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1233,6 +1240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counterText: {fileID: 182801432}
   countedTime: 0
+  countedTimeInScene: 0
   printedTime: 0
 --- !u!114 &966343705
 MonoBehaviour:
@@ -1632,6 +1640,7 @@ MonoBehaviour:
   orientation: {fileID: 746113508}
   direction: {x: 1, y: 0, z: 0}
   maxSpeed: 5
+  airMaxSpeed: 15
 --- !u!54 &1227213566
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class BulletTime : MonoBehaviour
     public float normalTimeMultiplier = 1f;
     public GameObject slowMoPostProcess;
     public GameObject normalPostProcess;
+    public bool isSlowMo = false;
 
     private void Start()
     {
@@ -25,12 +26,14 @@ public class BulletTime : MonoBehaviour
             timeSlowdown();
             slowMoPostProcess.SetActive(true);
             normalPostProcess.SetActive(false);
+            isSlowMo = true;
         }
         else
         {
             timeNormal();
             slowMoPostProcess.SetActive(false);
             normalPostProcess.SetActive(true);
+            isSlowMo = false;
         }
     }
 
