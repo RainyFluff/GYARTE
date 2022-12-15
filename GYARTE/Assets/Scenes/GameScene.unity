@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 886379378}
   - component: {fileID: 886379377}
   - component: {fileID: 886379376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1448,11 +1448,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1227213566}
-  Speed: 10
-  jumpForce: 10
+  speed: 0.2
+  airSpeed: 0.05
+  normalSpeed: 0.2
+  jumpForce: 6
+  cam: {fileID: 0}
+  sens: 10
   feet: {fileID: 696122078}
   orientation: {fileID: 746113508}
   direction: {x: 1, y: 0, z: 0}
+  maxSpeed: 5
 --- !u!54 &1227213566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1476,7 +1481,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227213564}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ae59aab9fe871c64c99ba4060414dbec, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
