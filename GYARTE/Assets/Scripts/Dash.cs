@@ -13,6 +13,7 @@ public class Dash : MonoBehaviour
     public Transform orientation;
     public float force;
     public Camera cam;
+    public float cameraZoom = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +42,11 @@ public class Dash : MonoBehaviour
         }
         if (Time.timeSinceLevelLoad - dashTime > dashDuration / 2 && dashTime < 100000)
         {
-            cam.fieldOfView += ((Time.timeSinceLevelLoad - dashTime) * 500f * Time.deltaTime);
+            cam.fieldOfView += ((Time.timeSinceLevelLoad - dashTime) * cameraZoom * Time.deltaTime);
         }
         else if (Time.timeSinceLevelLoad - dashTime < dashDuration/2 && dashTime < 100000)
         {
-            cam.fieldOfView -= ((Time.timeSinceLevelLoad - dashTime) * 500f * Time.deltaTime);
+            cam.fieldOfView -= ((Time.timeSinceLevelLoad - dashTime) * cameraZoom * Time.deltaTime);
         }
 
         else
