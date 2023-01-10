@@ -11,7 +11,8 @@ public class Movement : MonoBehaviour
     public float airSpeed = 0.05f;
     public float normalSpeed = 0.2f;
     public float jumpForce = 10f;
-    public GameObject cam;
+    public float frictionForce = 10f;
+    //public GameObject cam;
     public float sens = 10;
     //public GameObject orientation;
     bool IsGrounded = false;
@@ -23,6 +24,7 @@ public class Movement : MonoBehaviour
     public float maxSpeedOne = 3;
     public float maxSpeedTwo = 5;
     public float airMaxSpeed = 10;
+    bool isMoving;
     float airMaxSpeedDouble;
     int jumpsleft;
 
@@ -38,7 +40,7 @@ public class Movement : MonoBehaviour
     {
         Moving();
 
-       
+        
 
         IsGrounded = Physics.CheckSphere(feet.transform.position, 0.1f, groundmask);
 
@@ -57,26 +59,30 @@ public class Movement : MonoBehaviour
 
     void Moving()
     {
-        
-        if (Input.GetKey(KeyCode.A))
+        if (!IsGrounded)
         {
-            rb.AddForce(orientation.transform.right * -speed, ForceMode.VelocityChange);
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(orientation.transform.right * -speed, ForceMode.Acceleration);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(orientation.transform.right * speed, ForceMode.Acceleration);
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                rb.AddForce(orientation.transform.forward * speed, ForceMode.Acceleration);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                rb.AddForce(orientation.transform.forward * -speed, ForceMode.Acceleration);
+            }
+
         }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(orientation.transform.right * speed, ForceMode.VelocityChange);
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(orientation.transform.forward * speed, ForceMode.VelocityChange);
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(orientation.transform.forward * -speed, ForceMode.VelocityChange);
-        }
 
         if (IsGrounded)
         {
@@ -93,6 +99,44 @@ public class Movement : MonoBehaviour
             {
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
             }
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+            {
+                isMoving = true;
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(orientation.transform.right * -speed, ForceMode.VelocityChange);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(orientation.transform.right * speed, ForceMode.VelocityChange);
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                rb.AddForce(orientation.transform.forward * speed, ForceMode.VelocityChange);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                rb.AddForce(orientation.transform.forward * -speed, ForceMode.VelocityChange);
+            }
+
+            if (isMoving)
+            {
+                rb.AddForce(rb.velocity * -frictionForce);
+            }
+            else
+            {
+                rb.AddForce(rb.velocity * -frictionForce * 4);
+            }
+
+
+
+
         }
         else
         {

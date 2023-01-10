@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &223772123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,14 +2083,14 @@ MonoBehaviour:
   airSpeed: 0.05
   normalSpeed: 0.2
   jumpForce: 6
-  cam: {fileID: 0}
+  frictionForce: 1
   sens: 10
   feet: {fileID: 696122078}
   orientation: {fileID: 746113508}
   direction: {x: 1, y: 0, z: 0}
-  maxSpeedOne: 3
-  maxSpeedTwo: 5
-  airMaxSpeed: 15
+  maxSpeedOne: 10
+  maxSpeedTwo: 15
+  airMaxSpeed: 20
 --- !u!54 &1227213566
 Rigidbody:
   m_ObjectHideFlags: 0
