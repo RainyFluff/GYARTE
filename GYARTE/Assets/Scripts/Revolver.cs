@@ -12,6 +12,7 @@ public class Revolver : MonoBehaviour
     float timer = 10000000;
     public bool isReloading = false;
     public TextMeshProUGUI bulletText;
+    bool zeroBullets = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,13 @@ public class Revolver : MonoBehaviour
                 Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
                 bullets--;
             }
+        }
+
+        if(bullets == 0 && zeroBullets)
+        {
+            isReloading = true;
+            timer = Time.time;
+            zeroBullets = false;
         }
 
         if (Input.GetKeyDown(KeyCode.R))

@@ -10,6 +10,7 @@ public class Rocket : MonoBehaviour
     public float rocketLifeTime = 5;
     float timer;
     public Rigidbody rb;
+    public float maxSpeed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,11 @@ public class Rocket : MonoBehaviour
 
         rb.AddForce(transform.forward * 5, ForceMode.Acceleration);
 
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, 5);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+
+        
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
