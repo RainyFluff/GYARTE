@@ -799,7 +799,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429699600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1542,8 +1542,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886379375}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: 2.54, z: -12.16}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7999878, y: 2.5400085, z: -12.16}
   m_LocalScale: {x: 1.9723, y: 1.9723, z: 1.9723}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1796,6 +1796,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1188795269}
   bullets: 6
   reloadTime: 2
+  isReloading: 0
   bulletText: {fileID: 429699601}
 --- !u!1 &1116828441
 GameObject:
@@ -2042,7 +2043,7 @@ MonoBehaviour:
   airSpeed: 0.05
   normalSpeed: 0.2
   jumpForce: 6
-  cam: {fileID: 0}
+  cam: {fileID: 330585543}
   sens: 10
   feet: {fileID: 696122078}
   orientation: {fileID: 746113508}
@@ -2180,6 +2181,7 @@ MonoBehaviour:
   Revolver: {fileID: 1109255130}
   Shotgun: {fileID: 860143483}
   Katana: {fileID: 1375580312}
+  bulletText: {fileID: 429699601}
 --- !u!114 &1227213573
 MonoBehaviour:
   m_ObjectHideFlags: 0

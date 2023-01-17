@@ -10,7 +10,7 @@ public class Revolver : MonoBehaviour
     public int bullets = 6;
     public float reloadTime = 2;
     float timer = 10000000;
-    bool isReloading = false;
+    public bool isReloading = false;
     public TextMeshProUGUI bulletText;
 
     // Start is called before the first frame update
