@@ -40,6 +40,7 @@ public class Movement : MonoBehaviour
     {
         Moving();
 
+        //Debug.Log(IsGrounded);
         
 
         IsGrounded = Physics.CheckSphere(feet.transform.position, 0.1f, groundmask);
@@ -63,22 +64,22 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A))
             {
-                rb.AddForce(orientation.transform.right * -speed, ForceMode.Acceleration);
+                rb.AddForce(orientation.transform.right * -speed * 15, ForceMode.Acceleration);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                rb.AddForce(orientation.transform.right * speed, ForceMode.Acceleration);
+                rb.AddForce(orientation.transform.right * speed * 15, ForceMode.Acceleration);
             }
 
             if (Input.GetKey(KeyCode.W))
             {
-                rb.AddForce(orientation.transform.forward * speed, ForceMode.Acceleration);
+                rb.AddForce(orientation.transform.forward * speed * 15, ForceMode.Acceleration);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                rb.AddForce(orientation.transform.forward * -speed, ForceMode.Acceleration);
+                rb.AddForce(orientation.transform.forward * -speed * 15, ForceMode.Acceleration);
             }
 
         }
@@ -146,6 +147,7 @@ public class Movement : MonoBehaviour
                 {
                     rb.velocity = new Vector3(0, 0, 0);
                     rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+                    rb.AddForce(orientation.transform.forward * jumpForce, ForceMode.Impulse);
                     jumpsleft --;
                 }
             }

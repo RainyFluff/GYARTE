@@ -9,7 +9,7 @@ public class Dash : MonoBehaviour
     public float dashDuration = 0.1f;
     float dashTime = 10000000;
     float timer = 0;
-    public float dashCooldown = 10;
+    public float dashCooldown = 2;
     public Transform orientation;
     public float force;
     public Camera cam;
@@ -62,7 +62,7 @@ public class Dash : MonoBehaviour
         player.GetComponent<Movement>().enabled = false;
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(orientation.right * -force, ForceMode.Impulse);
+            rb.AddForce(-orientation.right * force, ForceMode.Impulse);
         }
 
         else if (Input.GetKey(KeyCode.D))
@@ -77,7 +77,7 @@ public class Dash : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(orientation.forward * -force, ForceMode.Impulse);
+            rb.AddForce(-orientation.forward * force, ForceMode.Impulse);
         }
 
         else

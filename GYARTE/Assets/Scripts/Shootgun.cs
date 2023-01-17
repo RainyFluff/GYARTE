@@ -8,6 +8,7 @@ public class Shootgun : MonoBehaviour
     public GameObject gun;
     public GameObject cam;
     RaycastHit target;
+
    
     [Header("Weapon Stats")]
     public int pelletsPerShot = 9;
@@ -37,6 +38,7 @@ public class Shootgun : MonoBehaviour
             nextTimeToFire = Time.time + 1/fireRate;
             Shoot();
         }
+
     }
 
     void Shoot()
@@ -54,6 +56,8 @@ public class Shootgun : MonoBehaviour
             target.rigidbody.AddForce(getShootingDirection() * knockbackPower, ForceMode.VelocityChange);
         }
     }
+
+    
 
     Vector3 getShootingDirection()
     {
