@@ -13,6 +13,7 @@ public class Revolver : MonoBehaviour
     public bool isReloading = false;
     public TextMeshProUGUI bulletText;
     bool zeroBullets = true;
+    public LineRenderer lineRenderer;
 
     // Start is called before the first frame update
     void Start()

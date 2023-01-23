@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Shootgun : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Shootgun : MonoBehaviour
     public GameObject gun;
     public GameObject cam;
     RaycastHit target;
+    
 
    
     [Header("Weapon Stats")]
@@ -16,6 +18,20 @@ public class Shootgun : MonoBehaviour
     public float fireRate = 0f;
     float nextTimeToFire;
     [SerializeField] float inaccuracyDistance = 5f;
+
+    [Header("LineRenderer")]
+    public Transform bulletSpawn;
+    public LineRenderer lineRenderer;
+    public LineRenderer lineRenderer2;
+    public LineRenderer lineRenderer3;
+    public LineRenderer lineRenderer4;
+    public LineRenderer lineRenderer5;
+    public LineRenderer lineRenderer6;
+    public LineRenderer lineRenderer7;
+    public LineRenderer lineRenderer8;
+    public LineRenderer lineRenderer9;
+    float timer;
+    public float timeForBulletDissapear = 0.1f;
 
 
     [Header("Weapon Physics")]
@@ -27,27 +43,189 @@ public class Shootgun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = Mathf.Infinity;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
-        {
+        {  
             nextTimeToFire = Time.time + 1/fireRate;
             Shoot();
+            timer = Time.timeSinceLevelLoad;
         }
 
+        if(Time.timeSinceLevelLoad - timer > timeForBulletDissapear)
+        {
+            lineRenderer.positionCount = 0;
+            lineRenderer2.positionCount = 0;
+            lineRenderer3.positionCount = 0;
+            lineRenderer4.positionCount = 0;
+            lineRenderer5.positionCount = 0;
+            lineRenderer6.positionCount = 0;
+            lineRenderer7.positionCount = 0;
+            lineRenderer8.positionCount = 0;
+            lineRenderer9.positionCount = 0;
+            timer = Mathf.Infinity;
+        }
     }
 
     void Shoot()
     {
+        lineRenderer.positionCount = 2;
+        lineRenderer2.positionCount = 2;
+        lineRenderer3.positionCount = 2;
+        lineRenderer4.positionCount = 2;
+        lineRenderer5.positionCount = 2;
+        lineRenderer6.positionCount = 2;
+        lineRenderer7.positionCount = 2;
+        lineRenderer8.positionCount = 2;
+        lineRenderer9.positionCount = 2;
         for (int i = 0; i < pelletsPerShot; i++)
         {
+            if(i == 1)
+            {
+                lineRenderer.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if(i == 2)
+            {
+                lineRenderer2.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 3)
+            {
+                lineRenderer3.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 4)
+            {
+                lineRenderer4.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 5)
+            {
+                lineRenderer5.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 6)
+            {
+                lineRenderer6.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 7)
+            {
+                lineRenderer7.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 8)
+            {
+                lineRenderer8.SetPosition(0, bulletSpawn.position);
+            }
+
+            else if (i == 0)
+            {
+                lineRenderer9.SetPosition(0, bulletSpawn.position);
+            }
+
             if (Physics.Raycast(cam.transform.position, getShootingDirection(), out target, range))
             {
                 print(target.collider);
+                if (i == 1)
+                {
+                    lineRenderer.SetPosition(1, target.point);
+                }
+
+                else if (i == 2)
+                {
+                    lineRenderer2.SetPosition(1, target.point);
+                }
+
+                else if (i == 3)
+                {
+                    lineRenderer3.SetPosition(1, target.point);
+                }
+
+                else if (i == 4)
+                {
+                    lineRenderer4.SetPosition(1, target.point);
+                }
+
+                else if (i == 5)
+                {
+                    lineRenderer5.SetPosition(1, target.point);
+                }
+
+                else if (i == 6)
+                {
+                    lineRenderer6.SetPosition(1, target.point);
+                }
+
+                else if (i == 7)
+                {
+                    lineRenderer7.SetPosition(1, target.point);
+                }
+
+                else if (i == 8)
+                {
+                    lineRenderer8.SetPosition(1, target.point);
+                }
+
+                else if (i == 0)
+                {
+                    lineRenderer9.SetPosition(1, target.point);
+                }
+
+            }
+            else 
+            {
+                Ray ray = new Ray(cam.transform.position, getShootingDirection());
+
+                if (i == 1)
+                {
+                    lineRenderer.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 2)
+                {
+                    lineRenderer2.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 3)
+                {
+                    lineRenderer3.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 4)
+                {
+                    lineRenderer4.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 5)
+                {
+                    lineRenderer5.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 6)
+                {
+                    lineRenderer6.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 7)
+                {
+                    lineRenderer7.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 8)
+                {
+                    lineRenderer8.SetPosition(1, ray.GetPoint(100));
+                }
+
+                else if (i == 0)
+                {
+                    lineRenderer9.SetPosition(1, ray.GetPoint(100));
+                }
             }
         }
         knockback();
