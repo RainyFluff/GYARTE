@@ -81,6 +81,7 @@ public class Movement : MonoBehaviour
             {
                 rb.AddForce(orientation.transform.forward * -speed * 15, ForceMode.Acceleration);
             }
+            
 
         }
 
@@ -136,7 +137,7 @@ public class Movement : MonoBehaviour
             }
 
 
-
+            
 
         }
         else

@@ -14,6 +14,8 @@ public class Dash : MonoBehaviour
     public float force;
     public Camera cam;
     public float cameraZoom = 500;
+    public float camFOVStandard = 70;
+    public float camFOVDashing = 90;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,21 +39,25 @@ public class Dash : MonoBehaviour
         {
             timer = Time.timeSinceLevelLoad;
             player.GetComponent<Movement>().enabled = true;
-            cam.fieldOfView = 60;
+            cam.fieldOfView = 70;
             dashTime = 10000000;
         }
         if (Time.timeSinceLevelLoad - dashTime > dashDuration / 2 && dashTime < 100000)
         {
-            cam.fieldOfView += ((Time.timeSinceLevelLoad - dashTime) * cameraZoom * Time.deltaTime);
+            //cam.fieldOfView += ((Time.timeSinceLevelLoad - dashTime) * cameraZoom * Time.deltaTime);
+
+           
+
+
         }
         else if (Time.timeSinceLevelLoad - dashTime < dashDuration/2 && dashTime < 100000)
         {
-            cam.fieldOfView -= ((Time.timeSinceLevelLoad - dashTime) * cameraZoom * Time.deltaTime);
+            //cam.fieldOfView -= ((Time.timeSinceLevelLoad - dashTime) * cameraZoom * Time.deltaTime);
         }
 
         else
         {
-            cam.fieldOfView = 60;
+            //cam.fieldOfView = 60;
         }
     }
 
