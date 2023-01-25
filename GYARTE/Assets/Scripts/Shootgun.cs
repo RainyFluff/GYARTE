@@ -33,6 +33,11 @@ public class Shootgun : MonoBehaviour
     float timer;
     public float timeForBulletDissapear = 0.1f;
 
+    [Header("Secondary Fire")]
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn1;
+    public Transform bulletSpawn2;
+
 
     [Header("Weapon Physics")]
     public Rigidbody rb;
@@ -56,6 +61,12 @@ public class Shootgun : MonoBehaviour
             timer = Time.timeSinceLevelLoad;
         }
 
+        else if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + 1 / fireRate;
+            Shoot2();
+        }
+
         if(Time.timeSinceLevelLoad - timer > timeForBulletDissapear)
         {
             lineRenderer.positionCount = 0;
@@ -69,6 +80,12 @@ public class Shootgun : MonoBehaviour
             lineRenderer9.positionCount = 0;
             timer = Mathf.Infinity;
         }
+    }
+
+    void Shoot2()
+    {
+        Instantiate(bulletPrefab, bulletSpawn1.transform.position, cam.transform.rotation);
+        Instantiate(bulletPrefab, bulletSpawn2.transform.position, cam.transform.rotation);
     }
 
     void Shoot()
