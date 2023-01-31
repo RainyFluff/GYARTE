@@ -28,7 +28,7 @@ public class Weaponswitch : MonoBehaviour
             Shotgun.SetActive(false);
             Revolver.SetActive(false);
             bulletText.gameObject.SetActive(false);
-            Revolver.GetComponent<Revolver>().isReloading = false;
+            //Revolver.GetComponent<Revolver>().isReloading = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -36,7 +36,7 @@ public class Weaponswitch : MonoBehaviour
             Shotgun.SetActive(true);
             Revolver.SetActive(false);
             bulletText.gameObject.SetActive(false);
-            Revolver.GetComponent<Revolver>().isReloading = false;
+            //Revolver.GetComponent<Revolver>().isReloading = false;
 
         }
 
