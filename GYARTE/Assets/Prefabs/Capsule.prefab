@@ -115,8 +115,14 @@ MonoBehaviour:
   explosionForce: 20
   explosionRadius: 5
   force: 15
+<<<<<<< Updated upstream
   explosionParticle: {fileID: 1482547966274728496, guid: d45aa8fc7fb507e49955fcc08eb25477,
     type: 3}
+=======
+  explosionParticle: {fileID: 4120060664087345855, guid: 87919ea3e401ef14c881453329711621,
+    type: 3}
+  explosion: 0
+>>>>>>> Stashed changes
 --- !u!54 &1317485273219109239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,4 +138,8 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
+<<<<<<< Updated upstream
   m_CollisionDetection: 2
+=======
+  m_CollisionDetection: 0
+>>>>>>> Stashed changes

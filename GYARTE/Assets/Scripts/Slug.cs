@@ -28,7 +28,7 @@ public class Slug : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -36,7 +36,7 @@ public class Slug : MonoBehaviour
         if (this.name != "Slug")
         {
             Explosion(transform.position);
-            
+
             Destroy(this.gameObject);
         }
     }
@@ -44,13 +44,13 @@ public class Slug : MonoBehaviour
     void Explosion(Vector3 explosionPoint)
     {
         hitColliders = Physics.OverlapSphere(explosionPoint, explosionRadius);
-        explosionParticle.Play();
+        Instantiate(explosionParticle);
         foreach (Collider hitCol in hitColliders)
         {
-            if(hitCol.GetComponent<Rigidbody>() != null)
+            if (hitCol.GetComponent<Rigidbody>() != null)
             {
                 hitCol.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint, explosionRadius, 1, ForceMode.Impulse);
-                
+
             }
         }
     }

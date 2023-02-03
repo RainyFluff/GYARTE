@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 87
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -93,7 +93,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 379
+<<<<<<< Updated upstream
     height: 579
+=======
+    height: 573
+>>>>>>> Stashed changes
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
@@ -119,7 +123,11 @@ MonoBehaviour:
     x: 0
     y: 579
     width: 1531
+<<<<<<< Updated upstream
     height: 378
+=======
+    height: 374
+>>>>>>> Stashed changes
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 13}
@@ -223,7 +231,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 88
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +256,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 89
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,6 +364,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Particles
   m_LastFoldersGridSize: -1
+<<<<<<< Updated upstream
   m_LastProjectPath: C:\Users\nikodemius.ivarsson\Documents\GitHub\GYARTE\GYARTE
   m_LockTracker:
     m_IsLocked: 0
@@ -364,6 +373,16 @@ MonoBehaviour:
     m_SelectedIDs: f8750000
     m_LastClickedID: 30200
     m_ExpandedIDs: 00000000d475000000ca9a3b
+=======
+  m_LastProjectPath: C:\Users\jakob.nystrom\Documents\GitHub\GYARTE\GYARTE
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 14.496033}
+    m_SelectedIDs: 007f0000
+    m_LastClickedID: 32512
+    m_ExpandedIDs: 00000000d67e0000fe7e0000007f0000047f0000087f00003ca300005ca3000000ca9a3bffffff7f
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: Resources
@@ -391,7 +410,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000d4750000
+=======
+    m_ExpandedIDs: 00000000d67e0000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -483,7 +506,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 505
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -521,9 +544,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 08fbffff60710000c8710000187200002a720000
+=======
+      m_SelectedIDs: 56c7ffff
+      m_LastClickedID: -14506
+      m_ExpandedIDs: a27afeffce9cfeffdc9cfeff029dfeff46e1ffffeae2ffff90e5ffff80e7ffffa4f1fffff07a0000b47b0000fc7b000094840000aa840000fa8400001a850000368500006e85000094850000b6850000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -795,9 +824,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 0.5079598, y: 0.17720634, z: -0.20926052}
     speed: 2
     m_Value: {x: 0.5079598, y: 0.17720634, z: -0.20926052}
+=======
+    m_Target: {x: -10.865209, y: 5.4508176, z: -29.587006}
+    speed: 2
+    m_Value: {x: -2.8286514, y: 2.87, z: -18.28}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -844,6 +879,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< Updated upstream
     m_Target: {x: 0.29746294, y: 0.35924017, z: -0.12197698, w: 0.8761348}
     speed: 2
     m_Value: {x: 0.29990083, y: 0.36018, z: -0.12350246, w: 0.8746869}
@@ -851,6 +887,15 @@ MonoBehaviour:
     m_Target: 0.7203509
     speed: 2
     m_Value: 2.2808099
+=======
+    m_Target: {x: 0.00013200087, y: 0.99950117, z: 0.0041886237, w: -0.03150964}
+    speed: 2
+    m_Value: {x: 0.00013200003, y: 0.99949473, z: 0.0041885967, w: -0.03150944}
+  m_Size:
+    m_Target: 0.58565956
+    speed: 2
+    m_Value: 0.12247408
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
