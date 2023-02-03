@@ -11,6 +11,7 @@ public class Slug : MonoBehaviour
     GameObject cam;
     private Collider[] hitColliders;
     public ParticleSystem explosionParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class Slug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //explosionParticle.transform.position = transform.position;
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +45,8 @@ public class Slug : MonoBehaviour
     void Explosion(Vector3 explosionPoint)
     {
         hitColliders = Physics.OverlapSphere(explosionPoint, explosionRadius);
-        Instantiate(explosionParticle);
+        
+        Instantiate(explosionParticle, transform.position, Quaternion.identity);
         foreach (Collider hitCol in hitColliders)
         {
             if (hitCol.GetComponent<Rigidbody>() != null)
