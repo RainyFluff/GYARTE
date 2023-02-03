@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 201643532}
   - component: {fileID: 201643531}
   - component: {fileID: 201643530}
+  - component: {fileID: 201643535}
   m_Layer: 0
   m_Name: Sentry
   m_TagString: Untagged
@@ -556,8 +557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketSpawn: {fileID: 1621940075}
   rocketPrefab: {fileID: 1171452071}
-  timeBetweenShots: 10
-  player: {fileID: 1227213570}
+  timeBetweenShots: 1
+  player: {fileID: 1227213564}
 --- !u!65 &201643531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -637,6 +638,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &201643535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201643529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734d09950b31e4143aa25e4c7e72d40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &302418590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,7 +4089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621940074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -44,6 +44,8 @@ public class Shootgun : MonoBehaviour
     public float forceRecoil = 10f;
     public float knockbackPower = 5f;
 
+    GameObject hit;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +82,8 @@ public class Shootgun : MonoBehaviour
             lineRenderer9.positionCount = 0;
             timer = Mathf.Infinity;
         }
+
+        
     }
 
     void Shoot2()
@@ -193,7 +197,11 @@ public class Shootgun : MonoBehaviour
                 {
                     lineRenderer9.SetPosition(1, target.point);
                 }
-
+                
+                if (target.transform.gameObject.CompareTag("target"))
+                {
+                    target.transform.gameObject.GetComponent<hp>().health--;
+                }
             }
             else 
             {

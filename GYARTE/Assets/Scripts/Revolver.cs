@@ -9,7 +9,7 @@ public class Revolver : MonoBehaviour
     public GameObject bulletSpawn;
     public int bullets = 6;
     public float reloadTime = 2;
-    float timer = 10000000;
+    float timer;
     public bool isReloading = false;
     public TextMeshProUGUI bulletText;
     bool zeroBullets = true;
@@ -57,7 +57,7 @@ public class Revolver : MonoBehaviour
             {
                 bullets = 6;
                 isReloading = false;
-                timer = 1000000;
+                timer = Mathf.Infinity;
             } 
         }
         

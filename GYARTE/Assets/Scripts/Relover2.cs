@@ -57,6 +57,10 @@ public class Relover2 : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out target, range))
         {
             print(target.collider);
+            if (target.transform.gameObject.CompareTag("target"))
+            {
+                target.transform.gameObject.GetComponent<hp>().health--;
+            }
             lineRenderer.SetPosition(1, target.point);
         }
         else
