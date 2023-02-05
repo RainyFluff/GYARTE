@@ -39,7 +39,7 @@ public class Dash : MonoBehaviour
         {
             timer = Time.timeSinceLevelLoad;
             player.GetComponent<Movement>().enabled = true;
-            cam.fieldOfView = 70;
+            //cam.fieldOfView = 70;
             dashTime = 10000000;
         }
         if (Time.timeSinceLevelLoad - dashTime > dashDuration / 2 && dashTime < 100000)

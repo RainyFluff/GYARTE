@@ -26,6 +26,8 @@ public class Relover2 : MonoBehaviour
     public float knockbackPower = 5f;
 
     public ParticleSystem muzzleFlash;
+
+    //public AudioSource shootieSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class Relover2 : MonoBehaviour
 
     void Shoot()
     {
+        //shootieSound.Play();
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, bulletSpawn.position);
         muzzleFlash.Play();

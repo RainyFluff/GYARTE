@@ -8,14 +8,14 @@ public class Weaponswitch : MonoBehaviour
     public GameObject Revolver;
     public GameObject Shotgun;
     public GameObject Katana;
-    public TextMeshProUGUI bulletText;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         Shotgun.SetActive(false);
         Revolver.SetActive(false);
-        bulletText.gameObject.SetActive(false);
+        
         
     }
 
@@ -27,7 +27,7 @@ public class Weaponswitch : MonoBehaviour
             Katana.SetActive(true);
             Shotgun.SetActive(false);
             Revolver.SetActive(false);
-            bulletText.gameObject.SetActive(false);
+            
             //Revolver.GetComponent<Revolver>().isReloading = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -35,7 +35,7 @@ public class Weaponswitch : MonoBehaviour
             Katana.SetActive(false);
             Shotgun.SetActive(true);
             Revolver.SetActive(false);
-            bulletText.gameObject.SetActive(false);
+            
             //Revolver.GetComponent<Revolver>().isReloading = false;
 
         }
@@ -45,7 +45,7 @@ public class Weaponswitch : MonoBehaviour
             Katana.SetActive(false);
             Shotgun.SetActive(false);
             Revolver.SetActive(true);
-            bulletText.gameObject.SetActive(true);
+            
         }
 
     }
