@@ -25,10 +25,11 @@ public class Relover2 : MonoBehaviour
     [Header("Weapon Physics")]
     public float knockbackPower = 5f;
 
-
+    public ParticleSystem muzzleFlash;
     // Start is called before the first frame update
     void Start()
     {
+        
         timer = Mathf.Infinity;
     }
 
@@ -53,6 +54,7 @@ public class Relover2 : MonoBehaviour
     {
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, bulletSpawn.position);
+        muzzleFlash.Play();
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out target, range))
         {

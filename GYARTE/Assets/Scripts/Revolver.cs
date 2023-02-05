@@ -14,6 +14,7 @@ public class Revolver : MonoBehaviour
     public TextMeshProUGUI bulletText;
     bool zeroBullets = true;
     public LineRenderer lineRenderer;
+    public Animation muzzleFlash;
 
     // Start is called before the first frame update
     void Start()

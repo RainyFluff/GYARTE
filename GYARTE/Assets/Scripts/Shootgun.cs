@@ -45,7 +45,9 @@ public class Shootgun : MonoBehaviour
     public float knockbackPower = 5f;
 
     GameObject hit;
-    
+
+    public ParticleSystem muzzleFlash;
+    public ParticleSystem smokeFlash;
 
     // Start is called before the first frame update
     void Start()
@@ -88,12 +90,14 @@ public class Shootgun : MonoBehaviour
 
     void Shoot2()
     {
+        smokeFlash.Play();
         Instantiate(bulletPrefab, bulletSpawn1.transform.position, cam.transform.rotation);
         Instantiate(bulletPrefab, bulletSpawn2.transform.position, cam.transform.rotation);
     }
 
     void Shoot()
     {
+        muzzleFlash.Play();
         lineRenderer.positionCount = 2;
         lineRenderer2.positionCount = 2;
         lineRenderer3.positionCount = 2;
