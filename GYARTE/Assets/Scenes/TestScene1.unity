@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &126197077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6647214715269555408, guid: 249e674ab1a5ecb4888e9285e6184852,
+    type: 3}
+  m_PrefabInstance: {fileID: 6917461095115649732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &215187974
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +617,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25a9fb42d361f46ad89221f6d301e96e, type: 2}
+  - {fileID: 2100000, guid: cfffa9aeb01cde743add2fcc79416d1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3742,7 +3748,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29062
+  m_Name: pb_Mesh30020
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7170,6 +7176,11 @@ PrefabInstance:
       propertyPath: speedText
       value: 
       objectReference: {fileID: 515474233}
+    - target: {fileID: 6917461094451345821, guid: 249e674ab1a5ecb4888e9285e6184852,
+        type: 3}
+      propertyPath: Shotgun
+      value: 
+      objectReference: {fileID: 126197077}
     - target: {fileID: 6917461094451345821, guid: 249e674ab1a5ecb4888e9285e6184852,
         type: 3}
       propertyPath: bulletText
