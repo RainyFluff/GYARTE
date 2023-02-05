@@ -8,15 +8,11 @@ public class Weaponswitch : MonoBehaviour
     public GameObject Revolver;
     public GameObject Shotgun;
     public GameObject Katana;
-    
-
     // Start is called before the first frame update
     void Start()
     {
         Shotgun.SetActive(false);
         Revolver.SetActive(false);
-        
-        
     }
 
     // Update is called once per frame
@@ -45,7 +41,6 @@ public class Weaponswitch : MonoBehaviour
             Katana.SetActive(false);
             Shotgun.SetActive(false);
             Revolver.SetActive(true);
-            
         }
 
     }
