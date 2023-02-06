@@ -12,6 +12,10 @@ public class Slug : MonoBehaviour
     private Collider[] hitColliders;
     public ParticleSystem explosionParticle;
 
+    AudioSource explosiSource;
+    AudioClip explosiSound;
+    GameObject soundHolder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +23,10 @@ public class Slug : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         transform.Rotate(90, 0, 0);
         rb.AddForce(cam.transform.forward * force, ForceMode.Impulse);
+        soundHolder = GameObject.Find("soundHolder");
+        explosiSource = soundHolder.GetComponent<AudioSource>();
+        explosiSound = explosiSource.clip;
+        
     }
 
     // Update is called once per frame
@@ -36,6 +44,7 @@ public class Slug : MonoBehaviour
     {
         if (this.name != "Slug")
         {
+            explosiSource.PlayOneShot(explosiSound);
             Explosion(transform.position);
 
             Destroy(this.gameObject);

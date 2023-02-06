@@ -27,7 +27,8 @@ public class Relover2 : MonoBehaviour
 
     public ParticleSystem muzzleFlash;
 
-    //public AudioSource shootieSound;
+    public AudioSource shootieSource;
+    public AudioClip shootieSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +55,7 @@ public class Relover2 : MonoBehaviour
 
     void Shoot()
     {
-        //shootieSound.Play();
+        shootieSource.PlayOneShot(shootieSound, 1);
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, bulletSpawn.position);
         muzzleFlash.Play();

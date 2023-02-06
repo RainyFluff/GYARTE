@@ -33,6 +33,7 @@ public class inGameMenu : MonoBehaviour
                 Cursor.visible = false;
             }
         }
+        
     }
     public void removeMenu()
     {

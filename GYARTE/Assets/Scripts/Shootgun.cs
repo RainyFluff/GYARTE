@@ -49,8 +49,10 @@ public class Shootgun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public ParticleSystem smokeFlash;
 
-    //public AudioSource shootieSound;
-    //public AudioSource altFireShootieSound;
+    public AudioSource shootieSource;
+    public AudioClip shootieSound;
+    public AudioSource altFireShootieSource;
+    public AudioClip altFireShootieSound;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +95,7 @@ public class Shootgun : MonoBehaviour
 
     void Shoot2()
     {
-        //altFireShootieSound.Play(); 
+        altFireShootieSource.PlayOneShot(altFireShootieSound); 
         smokeFlash.Play();
         Instantiate(bulletPrefab, bulletSpawn1.transform.position, cam.transform.rotation);
         Instantiate(bulletPrefab, bulletSpawn2.transform.position, cam.transform.rotation);
@@ -101,7 +103,7 @@ public class Shootgun : MonoBehaviour
 
     void Shoot()
     {
-        //shootieSound.Play();
+        shootieSource.PlayOneShot(shootieSound, 1);
         muzzleFlash.Play();
         lineRenderer.positionCount = 2;
         lineRenderer2.positionCount = 2;
