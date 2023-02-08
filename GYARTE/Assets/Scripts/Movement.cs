@@ -27,12 +27,21 @@ public class Movement : MonoBehaviour
     bool isMoving;
     float airMaxSpeedDouble;
     int jumpsleft;
+    AudioSource windSource;
+    AudioClip windClip;
+
+    public GameObject stepHolder;
+    AudioSource stepSource;
+    AudioClip stepClip;
 
     void Start()
     {
         groundmask = LayerMask.GetMask("Ground");
         rb = GetComponent<Rigidbody>();
-        
+        windSource = GetComponent<AudioSource>();
+        windClip = windSource.clip;
+        stepSource = stepHolder.GetComponent<AudioSource>();
+        stepClip = stepSource.clip;
     }
 
     
@@ -62,6 +71,11 @@ public class Movement : MonoBehaviour
     {
         if (!IsGrounded)
         {
+            stepSource.Stop();
+            if (!windSource.isPlaying)
+            {
+                windSource.Play();
+            }
             if (jumpsleft >= 1)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -100,6 +114,18 @@ public class Movement : MonoBehaviour
 
         if (IsGrounded)
         {
+            if((rb.velocity.x +rb.velocity.z) > 2)
+            {
+                if (!stepSource.isPlaying)
+                {
+                    stepSource.Play();
+                }
+            }
+            else
+            {
+                stepSource.Stop();
+            }
+            windSource.Stop();
             jumpsleft = 2;
             speed = normalSpeed;
             if (Input.GetKey(KeyCode.Space))
@@ -118,6 +144,8 @@ public class Movement : MonoBehaviour
             {
                 isMoving = true;
             }
+            
+
 
             if (Input.GetKey(KeyCode.A))
             {
@@ -141,16 +169,13 @@ public class Movement : MonoBehaviour
 
             if (isMoving)
             {
-                rb.AddForce(rb.velocity * -frictionForce);
+                //rb.AddForce(rb.velocity * -frictionForce);
+                
             }
             else
             {
-                rb.AddForce(rb.velocity * -frictionForce * 4);
+                //rb.AddForce(rb.velocity * -frictionForce * 4);
             }
-
-
-            
-
         }
         else
         {
