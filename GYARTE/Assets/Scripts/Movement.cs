@@ -8,8 +8,8 @@ public class Movement : MonoBehaviour
     [Header("General")]
     public Rigidbody rb;
     float speed = 0.2f;
-    float airSpeed = 0.15f;
-    float normalSpeed = 0.2f;
+    float airSpeed = 0.1f;
+    float normalSpeed = 0.15f;
     float jumpForce = 6f;
     float frictionForce = 1f;
     //public GameObject cam;
