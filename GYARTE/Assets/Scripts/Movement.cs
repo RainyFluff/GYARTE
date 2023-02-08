@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     [Header("General")]
     public Rigidbody rb;
     float speed = 0.2f;
-    float airSpeed = 0.3f;
+    float airSpeed = 0.15f;
     float normalSpeed = 0.2f;
     float jumpForce = 6f;
     float frictionForce = 1f;
@@ -166,10 +166,10 @@ public class Movement : MonoBehaviour
             {
                 rb.AddForce(orientation.transform.forward * -speed, ForceMode.VelocityChange);
             }
-
+            rb.AddForce(rb.velocity * -frictionForce);
             if (isMoving)
             {
-                //rb.AddForce(rb.velocity * -frictionForce);
+                
                 
             }
             else
