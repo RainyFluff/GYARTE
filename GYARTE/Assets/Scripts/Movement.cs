@@ -8,12 +8,12 @@ public class Movement : MonoBehaviour
     [Header("General")]
     public Rigidbody rb;
     float speed = 0.2f;
-    public float airSpeed = 0.05f;
-    public float normalSpeed = 0.2f;
-    public float jumpForce = 10f;
-    public float frictionForce = 10f;
+    float airSpeed = 0.3f;
+    float normalSpeed = 0.2f;
+    float jumpForce = 6f;
+    float frictionForce = 1f;
     //public GameObject cam;
-    public float sens = 10;
+    float sens = 10;
     //public GameObject orientation;
     bool IsGrounded = false;
     public GameObject feet;
@@ -21,9 +21,9 @@ public class Movement : MonoBehaviour
     LayerMask groundmask;
     public Vector3 direction = Vector3.right;
     float maxSpeed;
-    public float maxSpeedOne = 3;
-    public float maxSpeedTwo = 5;
-    public float airMaxSpeed = 10;
+    float maxSpeedOne = 10;
+    float maxSpeedTwo = 15;
+    //public float airMaxSpeed = 10;
     bool isMoving;
     float airMaxSpeedDouble;
     int jumpsleft;
@@ -62,6 +62,18 @@ public class Movement : MonoBehaviour
     {
         if (!IsGrounded)
         {
+            if (jumpsleft >= 1)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    rb.velocity = new Vector3(0, 0, 0);
+                    rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+                    rb.AddForce(orientation.transform.forward * jumpForce, ForceMode.Impulse);
+                    jumpsleft--;
+                }
+            }
+            speed = airSpeed;
+
             if (Input.GetKey(KeyCode.A))
             {
                 rb.AddForce(orientation.transform.right * -speed * 15, ForceMode.Acceleration);
@@ -142,18 +154,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            if (jumpsleft >= 1)
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    rb.velocity = new Vector3(0, 0, 0);
-                    rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-                    rb.AddForce(orientation.transform.forward * jumpForce, ForceMode.Impulse);
-                    jumpsleft --;
-                }
-            }
-            speed = airSpeed;
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, airMaxSpeed);
+           
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
