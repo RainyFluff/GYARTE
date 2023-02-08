@@ -46,7 +46,7 @@ public class WallJump : MonoBehaviour
         player.GetComponent<Movement>().enabled = false;
         Rigidbody rb = player.GetComponent<Rigidbody>();
         rb.useGravity = false;
-        
+        rb.velocity = Vector3.zero;
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddForce((player.transform.up + orientation.transform.forward) * wallJumpForce, ForceMode.Impulse);
