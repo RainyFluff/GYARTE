@@ -133,5 +133,3 @@ MonoBehaviour:
   force: 15
   explosionParticle: {fileID: 4120060664087345855, guid: 87919ea3e401ef14c881453329711621,
     type: 3}
-  explosiSource: {fileID: 0}
-  explosiSound: {fileID: 8300000, guid: f07cb2d36ac85964f875cecf296f1783, type: 3}

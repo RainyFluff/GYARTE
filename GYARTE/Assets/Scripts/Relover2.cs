@@ -7,8 +7,7 @@ public class Relover2 : MonoBehaviour
 {
     public GameObject cam;
     RaycastHit target;
-
-
+    Animator animator;
 
     [Header("Weapon Stats")]
     public float range = 100;
@@ -21,18 +20,16 @@ public class Relover2 : MonoBehaviour
     float timer;
     public float timeForBulletDissapear = 0.1f;
 
-
     [Header("Weapon Physics")]
     public float knockbackPower = 5f;
-
     public ParticleSystem muzzleFlash;
-
     public AudioSource shootieSource;
     public AudioClip shootieSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
         timer = Mathf.Infinity;
     }
 
@@ -44,12 +41,23 @@ public class Relover2 : MonoBehaviour
             nextTimeToFire = Time.time + 1 / fireRate;
             Shoot();
             timer = Time.timeSinceLevelLoad;
+            animator.SetBool("Shot", true);
         }
+       
 
         if (Time.timeSinceLevelLoad - timer > timeForBulletDissapear)
         {
             lineRenderer.positionCount = 0;
             timer = Mathf.Infinity;
+        }
+        Debug.Log(animator.GetBool("Shot"));
+    }
+
+    private void LateUpdate()
+    {
+        if (!Input.GetKeyDown(KeyCode.Mouse0) && Time.time < nextTimeToFire)
+        {
+            animator.SetBool("Shot", false);
         }
     }
 
@@ -59,6 +67,7 @@ public class Relover2 : MonoBehaviour
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, bulletSpawn.position);
         muzzleFlash.Play();
+        
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out target, range))
         {

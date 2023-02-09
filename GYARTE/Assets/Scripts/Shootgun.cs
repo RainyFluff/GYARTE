@@ -9,7 +9,7 @@ public class Shootgun : MonoBehaviour
     public GameObject gun;
     public GameObject cam;
     RaycastHit target;
-    
+    Animator animator;
 
    
     [Header("Weapon Stats")]
@@ -57,6 +57,7 @@ public class Shootgun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         timer = Mathf.Infinity;
     }
 
@@ -68,6 +69,7 @@ public class Shootgun : MonoBehaviour
             nextTimeToFire = Time.time + 1/fireRate;
             Shoot();
             timer = Time.timeSinceLevelLoad;
+            animator.SetBool("Shot", true);
         }
 
         else if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time >= nextTimeToFire)
@@ -93,6 +95,14 @@ public class Shootgun : MonoBehaviour
         
     }
 
+    private void LateUpdate()
+    {
+        if (!Input.GetKeyDown(KeyCode.Mouse0) && Time.time < nextTimeToFire)
+        {
+            animator.SetBool("Shot", false);
+        }
+            
+    }
     void Shoot2()
     {
         altFireShootieSource.PlayOneShot(altFireShootieSound); 
