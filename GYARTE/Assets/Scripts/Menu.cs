@@ -29,4 +29,9 @@ public class Menu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
 }

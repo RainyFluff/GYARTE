@@ -59,6 +59,8 @@ public class Shootgun : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         timer = Mathf.Infinity;
+        animator.SetBool("Shot", false);
+        animator.SetBool("ShotAlt", false);
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class Shootgun : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1 / fireRate;
             Shoot2();
+            animator.SetBool("ShotAlt", true);
         }
 
         if(Time.timeSinceLevelLoad - timer > timeForBulletDissapear)
@@ -101,7 +104,12 @@ public class Shootgun : MonoBehaviour
         {
             animator.SetBool("Shot", false);
         }
-            
+
+        if (!Input.GetKeyDown(KeyCode.Mouse1) && Time.time < nextTimeToFire)
+        {
+            animator.SetBool("ShotAlt", false);
+        }
+
     }
     void Shoot2()
     {

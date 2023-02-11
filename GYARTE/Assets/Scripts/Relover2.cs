@@ -50,7 +50,7 @@ public class Relover2 : MonoBehaviour
             lineRenderer.positionCount = 0;
             timer = Mathf.Infinity;
         }
-        Debug.Log(animator.GetBool("Shot"));
+        
     }
 
     private void LateUpdate()

@@ -6,7 +6,9 @@ using UnityEngine;
 public class inGameMenu : MonoBehaviour
 {
     public Canvas canvas;
-    float timeScale;
+    public GameObject postProcessing;
+    public GameObject normalPostProcessing;
+    public AudioListener listener;
     bool active = false;
     // Start is called before the first frame update
     void Start()
@@ -25,12 +27,20 @@ public class inGameMenu : MonoBehaviour
                 canvas.gameObject.SetActive(true);
                 active = true;
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                postProcessing.SetActive(true);
+                normalPostProcessing.SetActive(false);
+                listener.enabled = false;
             }
             else
             {
                 removeMenu();
                 active = false;
                 Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                postProcessing.SetActive(false);
+                normalPostProcessing.SetActive(true);
+                listener.enabled = true;
             }
         }
         
